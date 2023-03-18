@@ -11,7 +11,7 @@ const SideBar = () => {
             
             <li className='logo' >
               
-              <a href='/' className='nav-link'>
+              <a href='/OMsuite/#/' className='nav-link'>
               <svg id="Layer_1" 
                    data-name="Layer 1" 
                    xmlns="http://www.w3.org/2000/svg" 
@@ -33,7 +33,7 @@ const SideBar = () => {
             </li>
 
             <li className="nav-item">
-                <a href='/avatars' className='nav-link'>
+                <a href='/OMsuite/#/avatars' className='nav-link'>
                 <svg xmlns="http://www.w3.org/2000/svg"
                      viewBox="0 0 640 512">
                      <path
@@ -47,7 +47,7 @@ const SideBar = () => {
               </li>
               
               <li className="nav-item">
-                <a href='/items' className='nav-link'>
+                <a href='/OMsuite/#/items' className='nav-link'>
                 <svg xmlns="http://www.w3.org/2000/svg"
                      viewBox="0 0 640 512">
                     <path 
@@ -60,7 +60,7 @@ const SideBar = () => {
               </li>
 
               <li className="nav-item">
-                <a href='/persona' className='nav-link'>
+                <a href='/OMsuite/#/persona' className='nav-link'>
                 <svg xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 640 512">
                     <path
@@ -73,7 +73,7 @@ const SideBar = () => {
               </li>
 
               <li className="nav-item">
-                <a href='/gangs' className='nav-link'>
+                <a href='/OMsuite/#/gangs' className='nav-link'>
                 <svg xmlns="http://www.w3.org/2000/svg" 
                     viewBox="0 0 640 512">
                     <path 
@@ -88,7 +88,7 @@ const SideBar = () => {
               </li>
 
               <li className="nav-item">
-                <a href='/nftninja' className='nav-link'>
+                <a href='/OMsuite/#/nftninja' className='nav-link'>
                 <svg xmlns="http://www.w3.org/2000/svg" 
                      viewBox="0 0 640 512"> 
                     <path
