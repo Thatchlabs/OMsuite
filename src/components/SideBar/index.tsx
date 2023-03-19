@@ -20,7 +20,7 @@ const SideBar = () => {
                    fill ="currentColor"
                    d="M72.25,410l55.14-260.33H64.05L77.73,85.91H277.86l-13.47,63.76H204L148.86,410Z" 
                    transform="translate(-64.05 -85.91)"/>
-                  <path className="logo-color-2"
+                  <path className="logo-color-1"
                   fill ="currentColor"
                     d="M255,410,324,85.91h76.19L345,346.23H445.42L432.16,410Z" 
                    transform="translate(-64.05 -85.91)"/>

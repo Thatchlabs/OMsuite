@@ -79,6 +79,7 @@ main{
 }
 
 .nav-item:last-child{
+  bottom: 0;
   margin-top: auto;
 }
 
@@ -141,6 +142,13 @@ main{
 }
 
 @media only screen and (min-width: 600px){
+  .container{
+    top:10rem;
+  }
+  .container-tittle{
+    right: 8rem;
+    font-size: xx-large;
+  }
   .navbar{
     font-size:16px;
     top: 0;
@@ -173,20 +181,27 @@ main{
 
 
 @media only screen and (max-width: 600px){
-  .home{
-    
+  .container-tittle{
+    right: 2rem;
+    font-size: large;
+  }
+  .container{
+    top:5rem;
+  }
+  .homeLogo{
+    border-radius: 2px;
     top:0;
     left: 0;
     position: fixed;
     background-color: var(--blurple);
-    min-width: 2.3rem;
-    height: 2.3rem;
+    min-width: 4rem;
+    height: 4rem;
     box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.25);
   }
-  .home svg{
+  .homeLogo svg{
     position:absolute; 
-    left:0.2rem;
-    top: 0.2rem;
+    right:1rem;
+    top: 1rem;
     margin: 0.1;
   }
 
@@ -218,12 +233,10 @@ main{
 .container-tittle{
   text-transform: uppercase;
   position: fixed;
-  right: 8rem;
   top:0;
 }
 
 .container{
-  top:10rem;
   background-color: var(--containerbg);
   width: auto;
   height:100vh;
@@ -262,4 +275,61 @@ main{
   filter: grayscale(0%) opacity(1);
   background: var(--blp2);
   color: #000000;
+}
+
+.card{
+position:relative;
+width: 100%;
+margin: auto;
+padding: 10%;
+height: 20rem;
+background-color: var(--bg-secondary);
+text-decoration: none;
+box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 15px;
+}
+.card-head{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4rem;
+  height: 4rem;
+}
+.card-center{
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  bottom: 0;
+}
+.card-tittle{
+  text-decoration: none;
+  top: 0;
+  right: 0;
+  font-size: medium;
+}
+
+.card-link{
+  display: flex;
+  align-items: center;
+  height: 6rem;
+  color: var(--text-primary);
+  white-space:pre-wrap;
+  text-decoration: none;
+  filter: grayscale(100%) opacity(0.7);
+  transition: var(--transition-speed);
+}
+
+.homeContainer{
+  white-space:pre-wrap;
+  list-style: none ;
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  align-items: center;
+  position: absolute;
+  top:5rem;
+  bottom: auto;
+  left: 8rem;
+  right: 8rem;
+  width: 15rem;
 }

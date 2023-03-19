@@ -7,9 +7,8 @@ import { Personas } from "./components/Containter/Persona";
 import { Item } from "./components/Containter/getItem";
 import Home from "./components/Containter/Home";
 import { Routes,Route } from "react-router-dom";
-import { Coming } from './components/Containter/ComingSoon';
+import Coming from'./components/Containter/ComingSoon';
 import { Avatars } from "./components/Containter/getAvatar";
-
 require('@solana/wallet-adapter-react-ui/styles.css');
 
 
@@ -47,9 +46,9 @@ export default App;
 function HomeBu():ReactElement {
 
   return <div>
-  <div className='home'>
+  <div className='homeLogo'>
               
-              <a href='/' className='nav-link'>
+              <a href='/OMsuite/#/' className='nav-link'>
               <svg id="Layer_1" 
                    data-name="Layer 1" 
                    xmlns="http://www.w3.org/2000/svg" 
