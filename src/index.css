@@ -55,7 +55,6 @@ body::-webkit-scrollbar-thumb{
 }
 main{
   padding: 0.5rem;
-  margin-top: 1rem;
 }
 
 .navbar{
@@ -156,6 +155,8 @@ main{
   }
   main{
     margin-left: 7rem;
+    margin-top: 1rem;
+    
   }
   .homeContainer{
     flex-direction: row;
@@ -188,7 +189,7 @@ main{
   }
   .container{
     position: fixed;
-    right: 3rem;
+    right: 1rem;
     left: 7rem;
   }
   .home{
@@ -211,7 +212,9 @@ main{
     margin-top: 50%;
   }
   main{
-    margin-left: 4.5rem;
+    margin-left: 2rem;
+    margin-top: 4rem;
+      
   }
 
   .homeContainer{
@@ -261,8 +264,9 @@ main{
   }
   .container{
     position: fixed;
-    right: 3rem;
-    left: 3rem;
+    right: 0.1rem;
+    left: 0.1rem;
+    top:8rem;
   }
 }
 
@@ -270,7 +274,7 @@ main{
 .container-tittle{
   text-transform: uppercase;
   position: fixed;
-  top:0;
+  top:1rem;
 }
 
 .container{

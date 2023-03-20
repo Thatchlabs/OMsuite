@@ -9,16 +9,15 @@ const Home = () => {
     return (
     <div>
       <main>
-      <h1>Welcome to the lab</h1>
-      <p>Get started ...</p>
+        <h1>Welcome to the lab</h1>
+        <p>Get started ...</p>
       </main>
       <nav className='containerH'>
-      <ul className='homeContainer'>
-        <li className='homeItem'>{InfoCard("New Avatar", logoBlackSVG,AVATARSVG,'/OMsuite/#/avatars')}</li>
-        <li className='homeItem'>{InfoCard("New Gang", logoBlackSVG,GANGSVG,'/OMsuite/#/gangs')}</li>
-        <li className='homeItem'>{InfoCard("Get Items", logoBlackSVG,HATSVG,'/OMsuite/#/items')}</li>
-
-      </ul>
+        <ul className='homeContainer'>
+          <li className='homeItem'>{InfoCard("Get Items", logoBlackSVG,HATSVG,'/OMsuite/#/items')}</li>
+          <li className='homeItem'>{InfoCard("New Gang", logoBlackSVG,GANGSVG,'/OMsuite/#/gangs')}</li>
+          <li className='homeItem'>{InfoCard("New Avatar", logoBlackSVG,AVATARSVG,'/OMsuite/#/avatars')}</li>
+        </ul>
       </nav>
     </div>
     );
