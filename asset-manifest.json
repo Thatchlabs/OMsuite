@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/OMsuite/static/css/main.aed24289.css",
+    "main.css": "/OMsuite/static/css/main.8d4dd734.css",
     "main.js": "/OMsuite/static/js/main.10c7f43c.js",
     "index.html": "/OMsuite/index.html",
-    "main.aed24289.css.map": "/OMsuite/static/css/main.aed24289.css.map",
+    "main.8d4dd734.css.map": "/OMsuite/static/css/main.8d4dd734.css.map",
     "main.10c7f43c.js.map": "/OMsuite/static/js/main.10c7f43c.js.map"
   },
   "entrypoints": [
-    "static/css/main.aed24289.css",
+    "static/css/main.8d4dd734.css",
     "static/js/main.10c7f43c.js"
   ]
 }
