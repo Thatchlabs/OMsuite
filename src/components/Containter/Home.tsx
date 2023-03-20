@@ -10,7 +10,7 @@ const Home = () => {
     <div>
       <main>
         <h1>Welcome to the lab</h1>
-        <p>Get started ...</p>
+        <p>Get started 😉...</p>
       </main>
       <nav className='containerH'>
         <ul className='homeContainer'>
