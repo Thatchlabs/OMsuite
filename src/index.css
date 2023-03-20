@@ -54,8 +54,8 @@ body::-webkit-scrollbar-thumb{
   background: #6649b8;
 }
 main{
-  margin-left: 7rem;
-  padding: 1rem;
+  padding: 0.5rem;
+  margin-top: 1rem;
 }
 
 .navbar{
@@ -144,6 +144,19 @@ main{
 }
 
 @media only screen and (min-width: 600px){
+  .card-center{
+    margin-top: 70%;
+  }
+  .card-title{
+    word-wrap: break-word;
+    width: 50%;
+    text-align: center;
+    margin-left: 0.5rem;
+    font-size: 1.5rem;
+  }
+  main{
+    margin-left: 7rem;
+  }
   .homeContainer{
     flex-direction: row;
   }
@@ -186,6 +199,21 @@ main{
 
 
 @media only screen and (max-width: 600px){
+  .card-title{
+    word-wrap: none;
+    width: 100%;
+    text-align: center;
+  }
+  .card-head{ 
+    display: none;
+  }
+  .card-center{
+    margin-top: 50%;
+  }
+  main{
+    margin-left: 4.5rem;
+  }
+
   .homeContainer{
     flex-direction: column;
     
@@ -294,7 +322,7 @@ main{
 .card{
 position:relative;
 width: 25vw;
-max-width: 12rem;
+max-width: 15rem;
 min-width: 10rem;
 margin: 2rem;
 height: 42vw;
@@ -318,18 +346,12 @@ border-radius: 15px;
   height: 60%;
   top: 0;
   left: 27%;
-  margin-top: 20vh;
 }
 .card-title{
   position: fixed;
   text-decoration: none;
-  word-wrap: break-word;
   top: 1rem;
   right:0;
-  width: 50%;
-  height: 4rem;
-  font: 'impact';
-
 }
 
 .card-link{
@@ -359,23 +381,29 @@ border-radius: 15px;
   text-decoration: none;
   width: 80vw;
   position: absolute;
-  left: 10vw;
+  left: 6rem;
   right: 10dvw;
   padding: 0;
   overflow-x: auto;
 
 }
 
-.container::-webkit-scrollbar{
+.containerH{
+  margin-top: -1rem;
+  
+}
+
+
+.containerH::-webkit-scrollbar{
   width: 0.2rem;
   box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 2px;
 }
-.container::-webkit-scrollbar-track{
+.containerH::-webkit-scrollbar-track{
   display: none;
-  background: #1e1e24;
 }
 
-.container::-webkit-scrollbar-thumb{
+.containerH::-webkit-scrollbar-thumb{
   background: var(--blurple);
 }
+
