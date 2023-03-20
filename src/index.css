@@ -143,9 +143,22 @@ main{
 }
 
 @media only screen and (min-width: 600px){
-  .card-center{
-    margin-top: 70%;
+   .homeContainer{
+    left: 6rem;
+    right: 10dvw;
+    width: 80vw;
   }
+  
+  .card{
+    width: 25vw;
+    max-width: 15rem;
+    min-width: 10rem;
+    margin: 2rem;
+    height: 42vw;
+    max-height: 20rem;
+    border-radius: 15px;
+  }
+  
   .card-title{
     word-wrap: break-word;
     width: 50%;
@@ -200,6 +213,16 @@ main{
 
 
 @media only screen and (max-width: 600px){
+  .homeContainer{
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+  .card{
+    width: 100vw;
+    height: 50rem;
+    border-radius: 4px;
+  }
   .card-title{
     word-wrap: none;
     width: 100%;
@@ -209,7 +232,8 @@ main{
     display: none;
   }
   .card-center{
-    margin-top: 50%;
+    width: 0;
+    height: 0;    
   }
   main{
     margin-left: 2rem;
@@ -324,17 +348,18 @@ main{
 }
 
 .card{
-position:relative;
-width: 25vw;
-max-width: 15rem;
-min-width: 10rem;
-margin: 2rem;
-height: 42vw;
-max-height: 20rem;
-background-color: var(--bg-secondary);
-text-decoration: none;
-box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 15px;
+  position:relative;
+  background-color: var(--bg-secondary);
+  text-decoration: none;
+  box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.card-center{
+  margin-top: 70%;
+  position:fixed;
+  width: 50%;
+  height: 60%;
+  top: 0;
+  left: 27%;
 }
 .card-head{
   position: fixed;
@@ -343,13 +368,6 @@ border-radius: 15px;
   padding: 20px;
   width: 4rem;
   height: 4rem;
-}
-.card-center{
-  position:fixed;
-  width: 50%;
-  height: 60%;
-  top: 0;
-  left: 27%;
 }
 .card-title{
   position: fixed;
@@ -383,18 +401,13 @@ border-radius: 15px;
   list-style: none ;
   display: flex;
   text-decoration: none;
-  width: 80vw;
   position: absolute;
-  left: 6rem;
-  right: 10dvw;
   padding: 0;
   overflow-x: auto;
-
 }
 
 .containerH{
   margin-top: -1rem;
-  
 }
 
 
