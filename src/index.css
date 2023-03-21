@@ -158,8 +158,13 @@ main{
     max-height: 20rem;
     border-radius: 15px;
   }
-  
+  .card-center{
+    margin-top: 70%;
+    top: 0;
+    left: 27%;
+  }
   .card-title{
+    top: 1rem;
     word-wrap: break-word;
     width: 50%;
     text-align: center;
@@ -220,11 +225,12 @@ main{
   }
   .card{
     width: 100vw;
-    height: 50rem;
+    height: 15vh;
     border-radius: 4px;
   }
   .card-title{
     word-wrap: none;
+    top: 7vh;
     width: 100%;
     text-align: center;
   }
@@ -232,8 +238,7 @@ main{
     display: none;
   }
   .card-center{
-    width: 0;
-    height: 0;    
+    display: none; 
   }
   main{
     margin-left: 2rem;
@@ -243,7 +248,6 @@ main{
 
   .homeContainer{
     flex-direction: column;
-    
   }
   .container-tittle{
     right: 2rem;
@@ -354,12 +358,9 @@ main{
   box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .card-center{
-  margin-top: 70%;
   position:fixed;
   width: 50%;
   height: 60%;
-  top: 0;
-  left: 27%;
 }
 .card-head{
   position: fixed;
@@ -372,7 +373,6 @@ main{
 .card-title{
   position: fixed;
   text-decoration: none;
-  top: 1rem;
   right:0;
 }
 

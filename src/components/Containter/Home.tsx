@@ -4,13 +4,15 @@ import { HATSVG,AVATARSVG,GANGSVG,logoBlackSVG } from '../Elements/Images';
 
 
 
-
 const Home = () => {
+  
+  
     return (
     <div>
       <main>
         <h1>Welcome to the lab</h1>
         <p>Get started 😉...</p>
+        
       </main>
       <nav className='containerH'>
         <ul className='homeContainer'>

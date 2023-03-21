@@ -1,5 +1,7 @@
+
+import * as web3 from "@solana/web3.js";
 import ReactDOM from 'react-dom';
-import React, { FC, ReactElement, ReactNode} from 'react';
+import React, { FC, ReactElement, ReactNode, useMemo} from 'react';
 import './App.css';
 import SideBar from './components/SideBar';
 import { Gangs } from "./components/Containter/Gangs";
@@ -9,39 +11,27 @@ import Home from "./components/Containter/Home";
 import { Routes,Route } from "react-router-dom";
 import Coming from'./components/Containter/ComingSoon';
 import { Avatars } from "./components/Containter/getAvatar";
-require('@solana/wallet-adapter-react-ui/styles.css');
-
 
 // APP
 function App() { 
   //const routeResults = useRoutes(routes)
   return (
     <div>
-      <HomeBu/>
-      <Routes>
-        <Route index element ={<Home/>}/>
-        <Route path="/avatars" Component={Avatars}/>
-        <Route path="/gangs" Component={Gangs}/>
-        <Route path="/persona" Component={Personas}/>
-        <Route path="/items" Component={Item}/>
-        <Route path='/nftninja' element = {<Coming/>}/>
-      </Routes>
-      <SideBar/>
+                <HomeBu/>
+                <Routes>
+                  <Route index element ={<Home/>}/>
+                  <Route path="/avatars" Component={Avatars}/>
+                  <Route path="/gangs" Component={Gangs}/>
+                  <Route path="/persona" Component={Personas}/>
+                  <Route path="/items" Component={Item}/>
+                  <Route path='/nftninja' element = {<Coming/>}/>
+                </Routes>
+                <SideBar/>
       </div>
   );
 }
 
 export default App;
-
-///<SideBar/><Pager pageNo='Avatars'/>
-
-
-
-
-
-/*
- 
-*/
 
 function HomeBu():ReactElement {
 
