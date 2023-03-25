@@ -30,9 +30,9 @@ export const Home = () => {
       </main>
       <nav className='containerH'>
         <ul className='homeContainer'>
-          <li className='homeItem'>{InfoCard("Get Items", logoBlackSVG,HATSVG,'/OMsuite/#/items')}</li>
-          <li className='homeItem'>{InfoCard("New Gang", logoBlackSVG,GANGSVG,'/OMsuite/#/gangs')}</li>
-          <li className='homeItem'>{InfoCard("New Avatar", logoBlackSVG,AVATARSVG,'/OMsuite/#/avatars')}</li>
+          <li className='homeItem'>{InfoCard("Get Items", logoBlackSVG,HATSVG,'/OMsuite/#/items','🕶')}</li>
+          <li className='homeItem'>{InfoCard("New Gang", logoBlackSVG,GANGSVG,'/OMsuite/#/gangs','👨‍👦‍👦')}</li>
+          <li className='homeItem'>{InfoCard("New Avatar", logoBlackSVG,AVATARSVG,'/OMsuite/#/avatars','😎')}</li>
         </ul>
       </nav>
     </div>

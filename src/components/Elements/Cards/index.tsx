@@ -6,7 +6,7 @@ function HeadingwithContent({children}:{children:ReactNode}):ReactElement{
   }
 
 
-export function InfoCard(title:string, logo:ReactElement, mid:ReactElement, string:string) {
+export function InfoCard(title:string, logo:ReactElement, mid:ReactElement, string:string,emoji:string) {
     
     return (
     <div className='card'>
@@ -14,6 +14,7 @@ export function InfoCard(title:string, logo:ReactElement, mid:ReactElement, stri
         <div className='card-title'>{title}</div>
         <div className='card-head'>{logo}</div>
         <div className='card-center'>{mid}</div>
+        <div className='card-emoji'>{emoji}</div>
         </a>
     </div>
     );

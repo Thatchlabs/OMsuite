@@ -151,6 +151,9 @@ main{
     right: 10dvw;
     width: 80vw;
   }
+  .card-emoji{
+    display: none;
+  }
   
   .card{
     width: 25vw;
@@ -231,6 +234,15 @@ main{
     flex-direction: column;
     bottom: 0;
   }
+  .card-emoji{
+    position: fixed;
+    text-decoration: none;
+    right:0;
+    top: 7vh;
+    width: 100%;
+    text-align: center;
+    font-size: (1rem + 2vw)
+  }
   .card{
     width: 100vw;
     height: 15vh;
@@ -238,7 +250,7 @@ main{
   }
   .card-title{
     word-wrap: none;
-    top: 7vh;
+    top: 4vh;
     width: 100%;
     text-align: center;
     font-size: (1rem + 2vw)
