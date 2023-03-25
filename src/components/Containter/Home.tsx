@@ -19,12 +19,13 @@ export const Home = () => {
   
     return (
     <div>
+      <div className='login'>
+            <WalletMultiButton/>
+        </div>
       <main>
         <h1>Welcome to the lab</h1>
         <p>Get started 😉...</p>
-        <div className='login'>
-            <WalletMultiButton/>
-        </div>
+        
         
       </main>
       <nav className='containerH'>

@@ -143,6 +143,9 @@ main{
 }
 
 @media only screen and (min-width: 600px){
+  .login{
+    margin-left: 6.5rem;
+  }
    .homeContainer{
     left: 6rem;
     right: 10dvw;
@@ -218,6 +221,9 @@ main{
 
 
 @media only screen and (max-width: 600px){
+  .login{
+    margin-left: 4.5rem;
+  }
   .homeContainer{
     position: absolute;
     left: 0;
@@ -424,3 +430,7 @@ main{
   background: var(--blurple);
 }
 
+.login{
+  top: 0;
+  margin-top: 0.5rem;
+}
