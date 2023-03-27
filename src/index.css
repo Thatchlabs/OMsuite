@@ -144,7 +144,7 @@ body::-webkit-scrollbar-thumb{
   form{
     margin-left:5rem;
     width:40vw;
-    height: 50vh;
+    height: 80vh;
   }
   .Form-title{
     margin-left: 2rem;
@@ -233,7 +233,7 @@ body::-webkit-scrollbar-thumb{
   form{
     margin-left:8vw;
     width:80vw;
-    height: 60vh;
+    height: 70vh;
   }
   .Form-title{
     margin-left: 6vw;
@@ -468,6 +468,9 @@ body::-webkit-scrollbar-thumb{
 form{
   display: flex;
   flex-direction: column;
+  border-radius:8px ;
+  padding: 8px;
+  box-shadow:2px 2px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .label-info{
   font-size: x-small;
@@ -477,13 +480,13 @@ form{
 .Form{
   overflow-y: auto;
 }
-.Form::-webkit-scrollbar-track{
+.container::-webkit-scrollbar-track{
   display:none;
 }
-.Form::-webkit-scrollbar-thumb{
+.container::-webkit-scrollbar-thumb{
   background: var(--blurple);
 }
-.Form::-webkit-scrollbar{
+.container::-webkit-scrollbar{
   width: 0.2rem;
   box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 2px;
@@ -495,6 +498,7 @@ form{
   cursor: pointer;
   border-radius:8px ;
   padding: 8px;
+  font-family: Arial Black;
   box-shadow:2px 2px 4px 4px rgba(0, 0, 0, 0.25);
   filter: grayscale(70%) opacity(0.5);
 }
@@ -521,6 +525,7 @@ form{
   align-self: center;
   font-family: Arial Black;
   text-transform: uppercase;
+  padding-top: 0.2rem;
 }
 .Form p{
   align-self: center;
