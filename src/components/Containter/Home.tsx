@@ -23,10 +23,8 @@ export const Home = () => {
             <WalletMultiButton/>
         </div>
       <main>
-        <h1>Welcome to the lab</h1>
+        <h2>Welcome to the lab</h2>
         <p>Get started 😉...</p>
-        
-        
       </main>
       <nav className='containerH'>
         <ul className='homeContainer'>

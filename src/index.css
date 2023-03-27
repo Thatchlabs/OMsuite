@@ -53,9 +53,6 @@ body::-webkit-scrollbar-track{
 body::-webkit-scrollbar-thumb{
   background: #6649b8;
 }
-main{
-  padding: 0.5rem;
-}
 
 .navbar{
   position:fixed;
@@ -143,6 +140,15 @@ main{
 }
 
 @media only screen and (min-width: 600px){
+
+  form{
+    margin-left:5rem;
+    width:40vw;
+    height: 50vh;
+  }
+  .Form-title{
+    margin-left: 2rem;
+  }
   .login{
     margin-left: 6.5rem;
   }
@@ -178,7 +184,7 @@ main{
     font-size: 1.5rem;
   }
   main{
-    margin-left: 7rem;
+    margin-left: 8rem;
     margin-top: 1rem;
     
   }
@@ -224,6 +230,15 @@ main{
 
 
 @media only screen and (max-width: 600px){
+  form{
+    margin-left:8vw;
+    width:80vw;
+    height: 60vh;
+  }
+  .Form-title{
+    margin-left: 6vw;
+    font-size: large;
+  }
   .login{
     margin-left: 4.5rem;
   }
@@ -246,7 +261,8 @@ main{
   .card{
     width: 100vw;
     height: 15vh;
-    border-radius: 4px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
   }
   .card-title{
     word-wrap: none;
@@ -262,12 +278,13 @@ main{
     display: none; 
   }
   main{
-    margin-left: 2rem;
-    margin-top: 4rem;
+    margin-left: 1rem;
+    margin-top: 0rem;
     background-image:url(./components/Elements/Images/LogoGrey.png) ;
   }
 
   .container-tittle{
+    margin-top: 1rem;
     right: 2rem;
     font-size: large;
   }
@@ -332,6 +349,7 @@ main{
   overflow-y:auto;
   border: 4rem;
   align-items: center;
+  overflow-y: auto
 }
 .container-selector{
   position:absolute; 
@@ -445,4 +463,65 @@ main{
 .login{
   top: 0;
   margin-top: 0.5rem;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+}
+.label-info{
+  font-size: x-small;
+  margin: 0;
+  align-content: center;
+}
+.Form{
+  overflow-y: auto;
+}
+.Form::-webkit-scrollbar-track{
+  display:none;
+}
+.Form::-webkit-scrollbar-thumb{
+  background: var(--blurple);
+}
+.Form::-webkit-scrollbar{
+  width: 0.2rem;
+  box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
+}
+.Form button{
+  background: var(--blurple);
+  margin-top: 1.5rem;
+  border:0;
+  cursor: pointer;
+  border-radius:8px ;
+  padding: 8px;
+  box-shadow:2px 2px 4px 4px rgba(0, 0, 0, 0.25);
+  filter: grayscale(70%) opacity(0.5);
+}
+
+.Form button:hover{
+  filter: grayscale(0%) opacity(1);
+  background: var(--blurple);
+}
+
+.Form input{
+  padding: 2px ;
+  border-radius: 2px;
+  background: var(--logo-C);
+  border:0;
+}
+.Form select{
+  padding: 2px ;
+  border-radius: 2px;
+  background: var(--logo-C);
+  border: 0;
+}
+.Form label{
+  font-size: large;
+  align-self: center;
+  font-family: Arial Black;
+  text-transform: uppercase;
+}
+.Form p{
+  align-self: center;
 }
