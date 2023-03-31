@@ -20,8 +20,20 @@ import { Buffer } from 'buffer';
 import { promise } from 'zod';
 import { metadata } from '@metaplex/js/lib/utils';
 
+
+function pageBody(string:string){
+  if (string=="new"){
+    return <NewGang/>
+  }
+  if (string=="manage"){
+    return <div>Manage Gangs</div>
+  }
+  else{
+    return<NewGang/>
+  }
+}
 export function Gangs() {
-    const [display,setDisplay] = useState("newGang")
+    const [display,setDisplay] = useState("new")
 
 
     return (
@@ -39,14 +51,14 @@ export function Gangs() {
         <div>
           <nav className="container-selector">
             <ul className="container-selector-nav">
-              <li className="container-selector-item"> new </li>
-              <li className="container-selector-item">manage</li>
+              <li className="container-selector-item" onClick={() => setDisplay("new")} > new </li>
+              <li className="container-selector-item"onClick={() => setDisplay("manage")}>manage</li>
             </ul>
           </nav>
         </div>
       <div> {NFTs()}</div>
 
-      <div>{NewGang()}</div>
+      <div>{pageBody(display)}</div>
       </div>
     </div>   
     </div>
