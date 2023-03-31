@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "/OMsuite/static/css/main.4601073c.css",
-    "main.js": "/OMsuite/static/js/main.47c9f7c5.js",
+    "main.css": "/OMsuite/static/css/main.f713f748.css",
+    "main.js": "/OMsuite/static/js/main.48f80c6d.js",
     "static/js/59.3a647335.chunk.js": "/OMsuite/static/js/59.3a647335.chunk.js",
-    "static/media/LogoGrey.png": "/OMsuite/static/media/LogoGrey.5b5198662aa1fd0b5be6.png",
     "index.html": "/OMsuite/index.html",
-    "main.4601073c.css.map": "/OMsuite/static/css/main.4601073c.css.map",
-    "main.47c9f7c5.js.map": "/OMsuite/static/js/main.47c9f7c5.js.map",
+    "main.f713f748.css.map": "/OMsuite/static/css/main.f713f748.css.map",
+    "main.48f80c6d.js.map": "/OMsuite/static/js/main.48f80c6d.js.map",
     "59.3a647335.chunk.js.map": "/OMsuite/static/js/59.3a647335.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4601073c.css",
-    "static/js/main.47c9f7c5.js"
+    "static/css/main.f713f748.css",
+    "static/js/main.48f80c6d.js"
   ]
 }
