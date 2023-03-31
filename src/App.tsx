@@ -35,8 +35,8 @@ function App() {
         <Route path='/nftninja' element = {<Coming/>}/>
       </Routes>
       </Context>
-      <HomeButton/>
       <SideBar/>
+      <HomeButton/>
       
             </div>
 

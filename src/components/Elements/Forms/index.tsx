@@ -19,22 +19,3 @@ export type GangFormDATA ={
     mintType: string
 }
 
-
-export type GangDATA ={
-    GangLeader:string,
-    GangName: string,
-    NoOfMembers: number,
-}
-
-
-export function CreateGang(data:GangFormDATA){
-    const ranked =parseInt(data.Ranked)
-    const cost = 0.002+ (0.01*ranked) 
-    const price = cost*(3*(data.NoOfMembers + 1))
-
-    console.log("this would cost",price)
-
-    const GangData={
-        BaseNFT: data.GangLeader,
-    }
-}

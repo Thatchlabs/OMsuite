@@ -1,4 +1,5 @@
 import React, { FC, ReactElement, ReactNode,useState,useEffect, useMemo} from 'react';
+import * as mpl from "@metaplex-foundation/mpl-token-metadata";
 import  '@solana/wallet-adapter-react-ui/styles.css'
 import * as web3 from "@solana/web3.js";
 import { ConnectionProvider, ConnectionProviderProps, WalletProvider, useConnection,useWallet } from "@solana/wallet-adapter-react";
@@ -11,10 +12,18 @@ import { GlowWalletAdapter,
 import { LAMPORTS_PER_SOL } from '@solana/web3.js';
 import { text } from 'stream/consumers';
 import {useForm} from "react-hook-form"
-import{zodResolver} from "@hookform/resolvers/zod"
-import { Gangschema, CreateGang, GangFormDATA} from '../Elements/Forms';
+import * as splToken  from "@solana/spl-token"
+import { Gangschema, GangFormDATA} from '../Elements/Forms';
+import { ManageGang,NewGang } from './GangScripts';
+import { GetNormalNFTs } from '../../ChainScripts/GetNft';
+import { Buffer } from 'buffer';
+import { promise } from 'zod';
+import { metadata } from '@metaplex/js/lib/utils';
 
 export function Gangs() {
+    const [display,setDisplay] = useState("newGang")
+
+
     return (
     <div>
       <div className='login'>
@@ -35,7 +44,7 @@ export function Gangs() {
             </ul>
           </nav>
         </div>
-      <div>{Balance()}</div>
+      <div> {NFTs()}</div>
 
       <div>{NewGang()}</div>
       </div>
@@ -67,46 +76,62 @@ export function Gangs() {
       </div>
   }
 
+  function NFTs(){
+    const { connection } = useConnection();
+    const { publicKey } = useWallet();
+    const wallet = String(publicKey) 
+    const showaccounts:any = []
+    const nfts:any = []
 
-  function NewGang(){
-    const{register,handleSubmit} = useForm<GangFormDATA>({resolver: zodResolver(Gangschema)});
-    return(
-      <div className='Form'>
-        <div className='Form-title'><h3>Create a New Gang</h3></div>
-        <div className='Form-inputs'>
-          <form onSubmit={handleSubmit(CreateGang)}>
-            <label>Gang Leader NFT </label>
-            {//<input type="nft" placeholder='Select base nft...' {...register("GangLeader")}/>
-            }
-            <select placeholder='Select base nft...' {...register("GangLeader")}>
-              <option value="ibebnwoneurhjr"> nf1</option>
-              <option value="ibeertertere3rjr"> nf2</option>
-              <option value="ibesdfgerterhjr"> nf3</option>
-            </select>
+ 
 
-            <label>Gang Name </label>
-            <input type="text" placeholder='Gang name...' {...register("GangName")}/>
+    async function getTokenAccounts(wallet: string, solanaConnection: web3.Connection) {
 
-            <label>Members </label>
-            <p className='label-info'>2-1000 members</p>
-            <input type="number" placeholder='How Many Members...' {...register("NoOfMembers",{valueAsNumber: true})}/>
+      const filters:web3.GetProgramAccountsFilter[] = [
+        {
+          dataSize: 165,    //size of account (bytes)
+        },
+        {
+          memcmp: {
+            offset: 32,     //location of our query in the account (bytes)
+            bytes: wallet,  //our search criteria, a base58 encoded string
+          }            
+        }
+    ];
 
-            <label>Ranking </label>
-            <p className='label-info'>will the gang be ranked? </p>
-            <select  {...register("Ranked", {valueAsNumber:false})}>
-              <option value = "1"> Yes</option>
-              <option value="0"> No</option>
-            </select>
-            <label>Mint type </label>
-            <p className='label-info'>will the gang be ranked? </p>
-            <select  {...register("mintType", {valueAsNumber:false})}>
-              <option value = "CM(w)"> CandyMachine (whitelist)</option>
-              <option value = "CM"> CandyMachine (noWhitelist)</option>
-              <option value="SD">Self distribution</option>
-            </select>
-          <button> Create Gang</button>
-          </form>
-        </div>
-      </div>
-    )
+    const accounts = await solanaConnection.getParsedProgramAccounts(
+      splToken.TOKEN_PROGRAM_ID, //new PublicKey("TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA")
+      {filters: filters}
+        );
+
+
+      console.log(`Found ${accounts.length} token account(s) for wallet ${wallet}.`);
+      accounts.forEach((account, i) => {
+          //Parse the account data
+          const parsedAccountInfo:any = account.account.data;
+          const mintAddress:string = parsedAccountInfo["parsed"]["info"]["mint"];
+          const tokenBalance: number = parsedAccountInfo["parsed"]["info"]["tokenAmount"]["uiAmount"];
+          const supply:number= parsedAccountInfo["parsed"]["info"]["tokenAmount"]
+        
+          
+          //Log results
+          console.log(`Token Account No. ${i + 1}: ${account.pubkey.toString()}`);
+          console.log(`--Token Mint: ${mintAddress}`);
+          console.log(`--Posible Supply:${supply}`)
+          
+          console.log(`--Token Balance: ${tokenBalance}`); });
+          
+        
+        showaccounts.push(accounts)}
+
+    useEffect(() => {
+      if (!connection || !publicKey) {
+        return;
+      }
+      getTokenAccounts(wallet,connection)
+      
+    }, [connection, publicKey]);
+    return<></>
   }
+
+
