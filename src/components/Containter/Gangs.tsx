@@ -121,20 +121,17 @@ export function Gangs() {
       accounts.forEach((account, i) => {
           //Parse the account data
           const parsedAccountInfo:any = account.account.data;
-          const mintAddress:string = parsedAccountInfo["parsed"]["info"]["mint"];
           const tokenBalance: number = parsedAccountInfo["parsed"]["info"]["tokenAmount"]["uiAmount"];
-          const supply:number= parsedAccountInfo["parsed"]["info"]["tokenAmount"]
-        
-          
-          //Log results
-          console.log(`Token Account No. ${i + 1}: ${account.pubkey.toString()}`);
-          console.log(`--Token Mint: ${mintAddress}`);
-          console.log(`--Posible Supply:${supply}`)
-          
-          console.log(`--Token Balance: ${tokenBalance}`); });
-          
-        
-        showaccounts.push(accounts)}
+          const mintAddress:string = parsedAccountInfo["parsed"]["info"]["mint"];
+           if(tokenBalance==1){
+            //add token to nft array
+            nfts.push(mintAddress);
+            //Log results
+            console.log(`Token Account No. ${i + 1}: ${account.pubkey.toString()}`);
+            console.log(`--Token Mint: ${mintAddress}`);
+            //get token name and image uri
+
+          }});}
 
     useEffect(() => {
       if (!connection || !publicKey) {

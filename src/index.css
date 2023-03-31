@@ -178,6 +178,8 @@ body::-webkit-scrollbar-thumb{
     height: 42vw;
     max-height: 20rem;
     border-radius: 15px;
+   
+
   }
   .card-center{
     margin-top: 70%;
@@ -210,7 +212,7 @@ body::-webkit-scrollbar-thumb{
   .navbar{
     font-size:16px;
     top: 0;
-    width: 6rem;    
+    width: 5rem;    
     height: 100vh;
   }
   .navbar:hover{
@@ -224,6 +226,7 @@ body::-webkit-scrollbar-thumb{
   .navbar:hover .link-text{
     display: inline;
     transition: opacity var(--transition-speed);
+    color: var(--blurple);
   
   }
   .container{
@@ -243,13 +246,20 @@ body::-webkit-scrollbar-thumb{
 
 @media only screen and (max-width: 600px){
   form{
+    align-self: center;
     margin-left:8vw;
     width:80vw;
-    height: 70vh;
+    height: 75vh;
   }
   .Form-title{
     margin-left: 6vw;
     font-size: large;
+  }
+  .Form select{
+    height: 2.5rem;
+  }
+  .Form input{
+    height: 2.5rem;
   }
   .login{
     display: fixed;
@@ -413,7 +423,7 @@ body::-webkit-scrollbar-thumb{
 
 .card{
   position:relative;
-  background-color: var(--bg-secondary);
+  background-color:var(--containerbg);
   text-decoration: none;
   box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -421,6 +431,7 @@ body::-webkit-scrollbar-thumb{
   position:fixed;
   width: 50%;
   height: 60%;
+  filter: grayscale(0) opacity(1);
 }
 .card-head{
   position: fixed;
@@ -434,6 +445,7 @@ body::-webkit-scrollbar-thumb{
   position: fixed;
   text-decoration: none;
   right:0;
+  filter: grayscale(0) opacity(1);
 }
 
 .card-link{
@@ -453,7 +465,6 @@ body::-webkit-scrollbar-thumb{
 .card :hover{
   filter: grayscale(0%) opacity(1);
   color: var(--blurple);
-
 }
 
 .homeContainer{

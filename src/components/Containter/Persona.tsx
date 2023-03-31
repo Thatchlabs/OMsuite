@@ -38,8 +38,8 @@ export function Personas() {
               <li className="container-selector-item" onClick={() => setDisplay("manage")}>manage</li>
             </ul>
           </nav>
-
         </div>
+        <div>{pageBody(display)}</div>
       </div>
     </div>
     );
