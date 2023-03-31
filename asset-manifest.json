@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/OMsuite/static/css/main.f713f748.css",
-    "main.js": "/OMsuite/static/js/main.78ce6df9.js",
+    "main.css": "/OMsuite/static/css/main.52114694.css",
+    "main.js": "/OMsuite/static/js/main.0a6ba00e.js",
     "static/js/59.3a647335.chunk.js": "/OMsuite/static/js/59.3a647335.chunk.js",
     "index.html": "/OMsuite/index.html",
-    "main.f713f748.css.map": "/OMsuite/static/css/main.f713f748.css.map",
-    "main.78ce6df9.js.map": "/OMsuite/static/js/main.78ce6df9.js.map",
+    "main.52114694.css.map": "/OMsuite/static/css/main.52114694.css.map",
+    "main.0a6ba00e.js.map": "/OMsuite/static/js/main.0a6ba00e.js.map",
     "59.3a647335.chunk.js.map": "/OMsuite/static/js/59.3a647335.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f713f748.css",
-    "static/js/main.78ce6df9.js"
+    "static/css/main.52114694.css",
+    "static/js/main.0a6ba00e.js"
   ]
 }
