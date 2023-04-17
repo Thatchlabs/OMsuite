@@ -1,13 +1,6 @@
 
-import React, { FC, ReactElement, ReactNode,useState,useEffect, useMemo} from 'react';import  '@solana/wallet-adapter-react-ui/styles.css'
-import * as web3 from "@solana/web3.js";
-import { ConnectionProvider, ConnectionProviderProps, WalletProvider } from "@solana/wallet-adapter-react";
-import { WalletModalProvider,WalletMultiButton } from "@solana/wallet-adapter-react-ui";
-import { GlowWalletAdapter,
-         PhantomWalletAdapter,
-         SlopeWalletAdapter,
-         SolflareWalletAdapter,
-         } from '@solana/wallet-adapter-wallets'; 
+import {  useState} from 'react';import  '@solana/wallet-adapter-react-ui/styles.css'
+import { ConnectButton } from '@suiet/wallet-kit';
 
 
 function pageBody(string:string){
@@ -28,7 +21,7 @@ export function Item() {
     return (
       <div>
         <div className='login'>
-            <WalletMultiButton/>
+        <ConnectButton/>
         </div>
       <div className="container">
         <div className='container-tittle'>

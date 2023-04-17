@@ -2,24 +2,9 @@ import React, { FC, ReactElement, ReactNode,useState,useEffect, useMemo} from 'r
 import * as mpl from "@metaplex-foundation/mpl-token-metadata";
 import  '@solana/wallet-adapter-react-ui/styles.css'
 import * as web3 from "@solana/web3.js";
-import { ConnectionProvider, ConnectionProviderProps, WalletProvider, useConnection,useWallet } from "@solana/wallet-adapter-react";
-import { WalletModalProvider,WalletMultiButton } from "@solana/wallet-adapter-react-ui";
-import { GlowWalletAdapter,
-         PhantomWalletAdapter,
-         SlopeWalletAdapter,
-         SolflareWalletAdapter,
-         } from '@solana/wallet-adapter-wallets'; 
-import { LAMPORTS_PER_SOL } from '@solana/web3.js';
-import { text } from 'stream/consumers';
-import {useForm} from "react-hook-form"
-import * as splToken  from "@solana/spl-token"
-import { Gangschema, GangFormDATA} from '../Elements/Forms';
-import { ManageGang,NewGang } from './GangScripts';
-import { GetNormalNFTs } from '../../ChainScripts/GetNft';
-import { Buffer } from 'buffer';
-import { promise } from 'zod';
-import { metadata } from '@metaplex/js/lib/utils';
-
+import { ConnectButton, useWallet } from '@suiet/wallet-kit';
+import '@suiet/wallet-kit/style.css'
+import { ManageGang,NewGang} from '../Scripts/GangScripts';
 
 function pageBody(string:string){
   if (string=="new"){
@@ -32,14 +17,21 @@ function pageBody(string:string){
     return<NewGang/>
   }
 }
+
 export function Gangs() {
     const [display,setDisplay] = useState("new")
+    const publicKey  = useWallet();
+    const wallet = String(publicKey) 
+    const showaccounts:any = []
+    const nfts: { publicKey: web3.PublicKey; mintAddy: string}[] = [];
+    
+    
 
 
     return (
     <div>
       <div className='login'>
-            <WalletMultiButton/>
+      <ConnectButton/>
         </div>
    <div>
       <div className="container">
@@ -56,7 +48,7 @@ export function Gangs() {
             </ul>
           </nav>
         </div>
-      <div> {NFTs()}</div>
+      <div></div>
 
       <div>{pageBody(display)}</div>
       </div>
@@ -64,83 +56,3 @@ export function Gangs() {
     </div>
     );
   };
-
-
-  function Balance(){
-    const [balance,setBalance] = useState(0);
-    const { connection } = useConnection();
-    const { publicKey } = useWallet();
-
-    useEffect(() => {
-      if (!connection || !publicKey) {
-        return;
-      }
-        connection.getAccountInfo(publicKey).then((info) => {
-          if(!info){
-            return;
-          }
-          else setBalance(info.lamports);
-      });
-    }, [connection, publicKey]);
-    
-    return <div>
-        <p>{publicKey ? `Balance: ${balance / LAMPORTS_PER_SOL} SOL` : ""}</p>
-      </div>
-  }
-
-  function NFTs(){
-    const { connection } = useConnection();
-    const { publicKey } = useWallet();
-    const wallet = String(publicKey) 
-    const showaccounts:any = []
-    const nfts:any = []
-
- 
-
-    async function getTokenAccounts(wallet: string, solanaConnection: web3.Connection) {
-
-      const filters:web3.GetProgramAccountsFilter[] = [
-        {
-          dataSize: 165,    //size of account (bytes)
-        },
-        {
-          memcmp: {
-            offset: 32,     //location of our query in the account (bytes)
-            bytes: wallet,  //our search criteria, a base58 encoded string
-          }            
-        }
-    ];
-
-    const accounts = await solanaConnection.getParsedProgramAccounts(
-      splToken.TOKEN_PROGRAM_ID, //new PublicKey("TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA")
-      {filters: filters}
-        );
-
-
-      console.log(`Found ${accounts.length} token account(s) for wallet ${wallet}.`);
-      accounts.forEach((account, i) => {
-          //Parse the account data
-          const parsedAccountInfo:any = account.account.data;
-          const tokenBalance: number = parsedAccountInfo["parsed"]["info"]["tokenAmount"]["uiAmount"];
-          const mintAddress:string = parsedAccountInfo["parsed"]["info"]["mint"];
-           if(tokenBalance==1){
-            //add token to nft array
-            nfts.push(mintAddress);
-            //Log results
-            console.log(`Token Account No. ${i + 1}: ${account.pubkey.toString()}`);
-            console.log(`--Token Mint: ${mintAddress}`);
-            //get token name and image uri
-
-          }});}
-
-    useEffect(() => {
-      if (!connection || !publicKey) {
-        return;
-      }
-      getTokenAccounts(wallet,connection)
-      
-    }, [connection, publicKey]);
-    return<></>
-  }
-
-

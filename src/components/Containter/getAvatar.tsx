@@ -1,19 +1,12 @@
 import  '@solana/wallet-adapter-react-ui/styles.css'
 import * as web3 from "@solana/web3.js";
-import { ConnectionProvider, ConnectionProviderProps, WalletProvider } from "@solana/wallet-adapter-react";
-import { WalletModalProvider,WalletMultiButton } from "@solana/wallet-adapter-react-ui";
-import { GlowWalletAdapter,
-         PhantomWalletAdapter,
-         SlopeWalletAdapter,
-         SolflareWalletAdapter,
-         } from '@solana/wallet-adapter-wallets'; 
-
+import { ConnectButton } from '@suiet/wallet-kit';
 
 export function Avatars() {
     return (
     <div>
       <div className='login'>
-            <WalletMultiButton/>
+              <ConnectButton/>
         </div>
      <div>
       <div className="container">

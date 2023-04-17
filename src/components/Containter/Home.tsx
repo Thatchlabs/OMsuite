@@ -1,16 +1,7 @@
-import React, { ReactElement, ReactNode } from 'react';
+import { ReactElement } from 'react';
 import { InfoCard } from '../Elements/Cards';
 import { HATSVG,AVATARSVG,GANGSVG,logoBlackSVG } from '../Elements/Images';
-
-import  '@solana/wallet-adapter-react-ui/styles.css'
-import * as web3 from "@solana/web3.js";
-import { ConnectionProvider, ConnectionProviderProps, WalletProvider } from "@solana/wallet-adapter-react";
-import { WalletModalProvider,WalletMultiButton } from "@solana/wallet-adapter-react-ui";
-import { GlowWalletAdapter,
-         PhantomWalletAdapter,
-         SlopeWalletAdapter,
-         SolflareWalletAdapter,
-         } from '@solana/wallet-adapter-wallets';  
+import { ConnectButton } from '@suiet/wallet-kit';
 
 
 
@@ -20,11 +11,13 @@ export const Home = () => {
     return (
     <div>
       <div className='login'>
-            <WalletMultiButton/>
+            <ConnectButton/>
         </div>
       <main>
         <h2>Welcome to the lab</h2>
+        <a className='learn' href='https://thatch-labs.gitbook.io/intro/'>
         <p>Get started 😉...</p>
+        </a>
       </main>
       <nav className='containerH'>
         <ul className='homeContainer'>
@@ -63,3 +56,5 @@ export function HomeButton():ReactElement {
           </div>
           </div>
   }
+
+  
