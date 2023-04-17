@@ -1,12 +1,6 @@
-import * as web3 from "@solana/web3.js"
-import React, { FC, ReactElement, ReactNode,useState,useEffect, useMemo} from 'react';
 import {useForm} from "react-hook-form"
 import{zodResolver} from "@hookform/resolvers/zod"
-import { Gangschema, GangFormDATA} from '../Elements/Forms';
-import { GetNormalNFTs, GetGangNFTs } from "../../ChainScripts/GetNft";
-
-
-
+import { Gangschema, GangFormDATA} from '../Elements/Forms'
 
 
 
@@ -68,14 +62,6 @@ export function ManageGang(){
 
 
 
-
-
-
-
-
-
-
-
 export function CreateGang(data:GangFormDATA){
     const ranked =parseInt(data.Ranked)
     const cost = 0.002+ (0.01*ranked) 
@@ -87,5 +73,6 @@ export function CreateGang(data:GangFormDATA){
         BaseNFT: data.GangLeader,
     }
 }
+
 
 

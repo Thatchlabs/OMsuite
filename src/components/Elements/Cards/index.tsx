@@ -9,13 +9,15 @@ function HeadingwithContent({children}:{children:ReactNode}):ReactElement{
 export function InfoCard(title:string, logo:ReactElement, mid:ReactElement, string:string,emoji:string) {
     
     return (
-    <div className='card'>
-        <a className='card-link' href ={string}>
+      <a href ={string}>
+        <div className='card' >
+        <div className='card-link' >
         <div className='card-title'>{title}</div>
         <div className='card-head'>{logo}</div>
         <div className='card-center'>{mid}</div>
         <div className='card-emoji'>{emoji}</div>
-        </a>
+        </div>
     </div>
+    </a>
     );
   };

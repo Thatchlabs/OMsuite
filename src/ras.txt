@@ -1,28 +1,66 @@
-App.test.tsx{
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import App from './App';
-
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+{
+  "homepage": "http://Thatchlabs.github.io/OMsuite",
+  "name": "tl-app-main",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@hookform/resolvers": "^3.0.0",
+    "@suiet/wallet-kit": "^0.2.5",
+    "@mysten/sui.js":"^0.31.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.13",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "buffer": "^6.0.3",
+    "crypto-browserify": "^3.12.0",
+    "next": "^13.2.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.43.8",
+    "react-router-dom": "^6.9.0",
+    "react-scripts": "5.0.1",
+    "stream": "^0.0.2",
+    "stream-browserify": "^3.0.0",
+    "typescript": "^4.9.5",
+    "web-vitals": "^2.1.4",
+    "yup": "^1.0.2",
+    "zod": "^3.21.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gh-pages": "^5.0.0",
+    "mocha": "^10.2.0"
+  }
 }
-
-
-.homeContainer{
-  white-space:pre-wrap;
-  list-style: none ;
-  display: flex;
-  flex-direction: row;
-  text-decoration: none;
-  align-items: center;
-  position: absolute;
-  top:5rem;
-  bottom: auto;
-  left: 8rem;
-  right: 8rem;
-  width: 15rem;
-}
-
